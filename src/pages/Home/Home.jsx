@@ -9,12 +9,12 @@ const HomeComponent = props => {
       <Container className="mt-5">
         <Row className="d-flex">
           <Col md="10" className="ml-auto mr-auto">
-            <Jumbotron>
+            <Jumbotron className="bg-light-wood">
               <h4><em>Welcome to...</em></h4>
-              <h1 className="display-3">The Dashboard</h1>
+              <h1 className="display-3">The Blog</h1>
               <p className="lead">
-                <em>The Dashboard</em> is a site built for monitoring statistics, modifying other
-                site information, and other things!
+                <em>The Blog</em> is a site built for my blog. In the future, the home page will display recent blog posts.
+                This site will also serve as the writer's hub.
               </p>
               <hr className="my-2" />
               <p>This site was created by Noah Templet. Learn more below!</p>
