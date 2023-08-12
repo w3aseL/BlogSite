@@ -3,6 +3,8 @@ import { connect } from "react-redux"
 import { Container, Nav, Navbar, NavbarBrand, NavItem, NavLink, Dropdown, DropdownToggle, DropdownItem, DropdownMenu } from 'reactstrap';
 import { Avatar } from "@material-ui/core"
 
+import logo from "../../assets/images/blog-icon-256.png"
+
 class HeaderComp extends React.Component {
   constructor(props) {
     super(props)
@@ -16,9 +18,14 @@ class HeaderComp extends React.Component {
     const { loggedIn, user } = this.props
 
     return (
-      <Navbar color="light" dark expand="light">
+      <Navbar color="light-wood" dark expand="light-wood">
         <Container>
-          <NavbarBrand href="/"><h2 className="text-dark">The Dashboard</h2></NavbarBrand>
+          <NavbarBrand href="/">
+            <div class="d-inline-flex">
+              <img src={logo} alt="logo" height="45px" width="auto" />
+              <h2 className="text-dark ml-2 my-auto">The Blog</h2>
+            </div>
+          </NavbarBrand>
             <Nav className="ml-auto mr-0" navbar>
               {loggedIn ?
                 <>
@@ -37,11 +44,6 @@ class HeaderComp extends React.Component {
                         <DropdownItem header>{user.username}</DropdownItem>
                         <DropdownItem divider />
                         <DropdownItem><NavLink className="text-dark" href="/dashboard">Dashboard</NavLink></DropdownItem>
-                        <DropdownItem><NavLink className="text-dark" href="/songs">Songs</NavLink></DropdownItem>
-                        <DropdownItem><NavLink className="text-dark" href="/sessions">Sessions</NavLink></DropdownItem>
-                        <DropdownItem><NavLink className="text-dark" href="/stats">Statistics</NavLink></DropdownItem>
-                        <DropdownItem><NavLink className="text-dark" href="/edit-portfolio">Edit Portfolio</NavLink></DropdownItem>
-                        <DropdownItem><NavLink className="text-dark" href="/links">Edit Linktree</NavLink></DropdownItem>
                         <DropdownItem><NavLink className="text-dark" href="/settings">Settings</NavLink></DropdownItem>
                         <DropdownItem><NavLink className="text-dark" href="/logout">Logout</NavLink></DropdownItem>
                       </DropdownMenu>
